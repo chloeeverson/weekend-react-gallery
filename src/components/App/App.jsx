@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import GalleryList from '../GalleryList/GalleryList'
 import axios from 'axios'
@@ -30,7 +30,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList galleryList={galleryList} />
+        <GalleryList list={galleryList} />
         <img src="images/bwca.jpg"/>
       </div>
     );

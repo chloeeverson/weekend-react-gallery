@@ -1,0 +1,1 @@
+function GalleryItem({path, })
