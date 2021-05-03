@@ -31,7 +31,6 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList list={galleryList} />
-        <img src="images/bwca.jpg"/>
       </div>
     );
 }
