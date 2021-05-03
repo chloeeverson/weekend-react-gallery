@@ -1,11 +1,10 @@
 img {
-    float: left;
     width: 300px;
-    margin-left: 47px;
+    margin-left: 60px;
     margin-top: 20px;
 
 }
 
-#item {
-    float: left;
+.item {
+    display: inline-block;
 }

@@ -1,12 +1,12 @@
 import './GalleryItem.css';
 import { useState } from 'react';
+import axios from 'axios';
 
-
-function GalleryItem( props ){
-    console.log(props);
+function GalleryItem({item, getImages} ){
+    
     let [image, setImage] = useState(true);
   
-    let [like, setLike] = useState(0);
+    
    
     
 
@@ -18,34 +18,34 @@ function GalleryItem( props ){
 
     const handleClick = () => {
         console.log('button clicked');
-        setLike(like + 1);
-        // props.editLikes();
-
-        //const editLikes = () => {
-        // axios.put('/gallery/like/:id')
-        //     .then(function (response) {
-        //       props.getImages();
-        //     })
-        //     .catch(function (error) {
-        //       alert('error on put route client', error);
-        //     })
-        //   }
+        axios.put('/gallery/like/' + item.id)
+            .then(function (response) {
+                console.log(response);
+              getImages();
+            })
+            .catch(function (error) {
+              alert('error on put route client', error);
+            })
+          
         
     }
  
 
     return (
         <>
-        <div className="item" onClick={toggleImage}>
-        {image ? (<img key={props.item.id} src={props.item.path}/>) : 
-                    (<p key={props.item.id}>{props.item.description}</p>)
-                }
-        
-     
+        {image ?
+        (<div className="item">
+        <p><img onClick={toggleImage} src={item.path}/></p>
         <button onClick={handleClick}>Like</button>
-        {like} likes!
-         </div>
-        </>
+        {item.likes} likes! </div>
+        ) : (
+            <div className="item">
+                <p onClick={toggleImage}>{item.description}</p>
+            <button onClick={handleClick}>Like</button>
+            <p>{item.likes} likes!</p>
+         </div>)
+        }
+    </>
     )
 }
 

@@ -1,18 +1,18 @@
 import GalleryItem from '../GalleryItem/GalleryItem';
 
 
-function GalleryList(props) {
-    // props.editLikes();
+function GalleryList({list, getImages}) {
+ 
     return (
         <>
-            <form>
-                {props.list.map(item =>
-                    (<GalleryItem item={item} 
-                    //props.editLikes={editLikes}
+        
+                {list.map(item =>
+                    (<GalleryItem key={item.id} item={item} 
+                    getImages={getImages}
                     />)
                 )}
                
-            </form>
+        
         </>
     )
 
