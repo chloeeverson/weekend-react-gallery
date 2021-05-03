@@ -19,6 +19,17 @@ function GalleryItem( props ){
     const handleClick = () => {
         console.log('button clicked');
         setLike(like + 1);
+        // props.editLikes();
+
+        //const editLikes = () => {
+        // axios.put('/gallery/like/:id')
+        //     .then(function (response) {
+        //       props.getImages();
+        //     })
+        //     .catch(function (error) {
+        //       alert('error on put route client', error);
+        //     })
+        //   }
         
     }
  

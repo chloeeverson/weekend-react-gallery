@@ -1,9 +1,8 @@
-# Project Name
+# GALLERY OF MY LIFE
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+Duration: 10 hours
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+This app displays images on page. When a user visits page they can click on image to view description of image. User can also click the 'like' button for each image - which increases the displayed number of likes for each image by 1.
