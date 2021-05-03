@@ -24,13 +24,26 @@ function App() {
       })
   }
 
+    //function to change number of likes when  button clicked
+    const editLikes = () => {
+      axios.put('/gallery/like/:id')
+      .then(function (response) {
+        getImages();
+      })
+      .catch(function (error) {
+        alert('error on put route client', error);
+      })
+    }
+
+
 
   return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList list={galleryList} />
+        <GalleryList list={galleryList}
+          editLikes={editLikes}/>
       </div>
     );
 }

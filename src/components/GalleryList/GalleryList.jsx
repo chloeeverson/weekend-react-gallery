@@ -9,6 +9,7 @@ function GalleryList(props) {
                 {props.list.map(item =>
                     (<GalleryItem item={item} />)
                 )}
+                {props.}
             </form>
         </>
     )

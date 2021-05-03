@@ -1,17 +1,13 @@
 import './GalleryItem.css';
 import { useState } from 'react';
 
+
 function GalleryItem( props ){
     console.log(props);
     let [image, setImage] = useState(true);
-    // let [description, setDescription] = useState('');
-    // let [like, setLike] = useState(<img key={props.item.id} src={props.item.path}/>);
-    
-    // const imagePath = {
-    //     image: <img key={props.item.id} src={props.item.path}/>,
-    //     description: <form key={props.item.id}>{props.item.description}</form>
-    // }
-
+  
+    let [like, setLike] = useState(0);
+   
     
 
     const toggleImage = () => {
@@ -20,13 +16,12 @@ function GalleryItem( props ){
 
     }
 
-    // getImageName = () => this.state.open ? 'image' : 'description'
-    // const handleClick = () => {
-    //     console.log('in handleClick');
-    //     setLike(like + 1);
-       
-    // }
-    // const imageName = this.getImageName();
+    const handleClick = () => {
+        console.log('button clicked');
+        setLike(like + 1);
+        
+    }
+ 
 
     return (
         <>
@@ -36,8 +31,8 @@ function GalleryItem( props ){
                 }
         
      
-        {/* <button onClick={handleClick}>Like</button>
-        {like} likes! */}
+        <button onClick={handleClick}>Like</button>
+        {like} likes!
          </div>
         </>
     )
